@@ -1,0 +1,43 @@
+body {
+    font-family: Helvetica, Arial, Courier, sans-serif;
+    color: #3C403D;
+}
+h1 {
+    font-size: 2em;
+    font-weight: 800;
+}
+h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+h3 {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+figcaption {
+    font-weight: 800;
+}
+b, q {
+    color: #39603D;
+    font-weight: 800;
+}
+u {
+    color: #39603D;
+    font-weight: 800;
+}
+i {
+    color: #39603D;
+    font-style: italic;
+}
+#blog-cards a {
+    text-decoration: none;
+}
+a {
+    transition: all 0.3s ease;
+}
+a:visited {
+    color: #3C403D;
+}
+a:hover {
+    color: #000000;
+}

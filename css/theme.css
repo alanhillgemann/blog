@@ -1,0 +1,282 @@
+body {
+    max-width: 1280px;
+    margin: 0 auto !important;
+    float: none !important;
+    display: grid;
+    row-gap: 1em;
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    grid-template-rows: auto auto 4em;
+}
+
+#header {
+    grid-area: header;
+    display: grid;
+    align-items: center;
+    background-color: #A3BCB6;
+}
+
+#logo {
+    grid-area: logo;
+    height: 64px;
+    width: 286px;
+}
+
+#logo img {
+    height: 100%;
+    width: auto;
+}
+
+#nav ul {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+}
+
+#search {
+    grid-area: search;
+    display: flex;
+    margin-right: 1em;
+}
+
+#search button {
+    height: 2em;
+    width: 2em;
+    background-image: url(../img/search.png);
+    background-size: 2em 2em;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+main {
+    grid-area: main;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+main li {
+    margin-bottom: 0.5em;
+}
+
+#blog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.card {
+    border: 1px solid #DADED4;
+    padding: 0.5rem;
+}
+
+.card:focus, .card:hover {
+    background-color: #DADED4;
+}
+
+figure {
+     position: relative;
+}
+
+figure img {
+    display: block;
+}
+
+figcaption.white {
+    color: #FFF;
+}
+
+figcaption.dark-grey {
+    color: #3C403D;
+}
+
+figcaption.top-left {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+}
+
+figure img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card button {
+    padding: 0.5em;
+}
+
+#aside {
+    grid-area: aside;
+    margin-right: 1em;
+}
+
+#aside li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+#footer {
+    grid-area: footer;
+    display: grid;
+    background-color: #DADED4;
+}
+
+#footer ul {
+    display: flex;
+    align-items: center;
+}
+
+#author-info img {
+    height: 5em;
+    width: 5em;
+}
+
+h1, h2, h3, section, main p:not(:last-child), figure, blockquote {
+    margin-bottom: 1rem;
+}
+
+button {
+    cursor:pointer;
+}
+
+@media (min-width: 320px) and (max-width: 580px) {
+    #blog {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "main"
+        "aside"
+        "footer";
+        grid-template-rows: auto auto auto 4em;
+    }
+
+    #header {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "logo"
+        "nav"
+        "search";
+        grid-template-rows: 4em 6em 4em;
+        justify-items: center;
+    }
+
+    #header li:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #aside {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    #footer ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer li:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+}
+
+@media (min-width: 581px) and (max-width: 1024px) {
+    #blog {
+        grid-template-columns: 2fr 206px;
+        grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+        grid-template-rows: auto auto 4em;
+    }
+
+    #header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4em 4em;
+    }
+
+    #logo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    #search {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        margin-left: auto;
+    }
+
+    #nav {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-content: center;
+    }
+
+    .card {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 45%;
+    }
+
+    #aside {
+        margin-right: 1em;
+    }
+
+    #footer ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1025px) {
+    #blog {
+        grid-template-columns: 2fr 206px;
+        grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+        grid-template-rows: auto auto 4em;
+    }
+
+    #header {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+        "logo nav search";
+    }
+
+    #search {
+        margin-left: auto;
+    }
+
+    .card {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 30%;
+    }
+
+    #aside {
+        margin-right: 1em;
+    }
+
+    #footer ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
